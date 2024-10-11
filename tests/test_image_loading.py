@@ -19,7 +19,7 @@ class TestImageLoading(unittest.TestCase):
             import matplotlib.pyplot as plt
 
             image = cv.imread(self.imgPath)
-            plt.imshow(cv.cvtColor(image,cv.COLOR_BRG2RGB))
+            plt.imshow(cv.cvtColor(image,cv.COLOR_BGR2RGB))
             plt.axis('off')
             plt.show()
         except Exception as e:
