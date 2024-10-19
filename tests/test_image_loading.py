@@ -7,7 +7,7 @@ import numpy as np
 # Add the project root to the Python path
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-from main import load_img, convert_to_grayscale, apply_th
+from main import load_img, convert_to_grayscale, apply_threshold
 
 class TestImageLoading(unittest.TestCase):
     def setUp(self):
@@ -27,9 +27,9 @@ class TestImageLoading(unittest.TestCase):
 
     def test_apply_th(self):
         grayscale_image = convert_to_grayscale(self.testImg)
-        th_image = apply_th(grayscale_image)
-        self.assertEqual(len(th_image.shape), 2, "Thresholded Image Shape Mismatch")
-        self.assertTrue(np.array_equal(np.unique(th_image), [0, 255]), "Thresholding failed")
+        thresh_image = apply_threshold(grayscale_image)
+        self.assertEqual(len(thresh_image.shape), 2, "Threshold Image Shape Mismatch")
+        self.assertTrue(np.array_equal(np.unique(thresh_image), [0, 255]), "Threshing failed")
 
 if __name__ == "__main__":
     unittest.main()

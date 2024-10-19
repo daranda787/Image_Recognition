@@ -1,11 +1,13 @@
 import os
 import cv2 as cv
 import numpy as np
+import pytesseract
+from PIL import Image
 import matplotlib.pyplot as plt
 from document_conversion.converter import convert_to_cv_image
 
 # Flag to control image display
-DISPLAY_IMAGES = True  # Set to True if you want to see each processed image
+DISPLAY_IMAGES = False  # Set to True if you want to see each processed image
 
 #  Read & Display an Image
 def load_img(path):
